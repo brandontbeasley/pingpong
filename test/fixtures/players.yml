@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  position: MyString
+  rating: 1
+  confidence_interval: 1
+  email: MyString
+  first_name: MyString
+  last_name: MyString
+
+two:
+  position: MyString
+  rating: 1
+  confidence_interval: 1
+  email: MyString
+  first_name: MyString
+  last_name: MyString

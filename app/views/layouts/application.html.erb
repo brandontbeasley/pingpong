@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pingpong</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<div class="navbar navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container">
+				<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+					<span class="icon-bar"></span>
+				  	<span class="icon-bar"></span>
+				  	<span class="icon-bar"></span>
+				</a>
+				<a class="brand" href="#">Ping Pong Rankings</a>
+				<div class="nav-collapse">
+					<ul style="float:right;">
+					<% if player_signed_in? %>
+					    Logged in as <strong><%= current_player.email %></strong>.
+							<a href="/player/<%= @player.id %>/edit">Edit Player</a>
+					    <%= link_to "Logout", destroy_player_session_path, method: :delete %>
+					<% else %>
+					    <%= link_to "Sign up", new_player_registration_path %> |
+					    <%= link_to "Login", new_player_session_path %>
+					<% end %>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<%= yield %>
+	</div>
+</body>
+</html>

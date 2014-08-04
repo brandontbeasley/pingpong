@@ -1,0 +1,27 @@
+<div class="container">
+
+	<%= form_for @game, url: "/game/create" do |f| %>
+		<!-- Current User's  Username -->
+		<%= f.text_field :player1 %>
+		<!-- Current User's Score -->
+		<% if @game.p1score == nil %>
+			<%= f.text_field :p1score, :placeholder => "Your Score" %>
+		<% else %>
+			<%= f.text_field :p1score %>
+		<% end %>
+		<!-- Opponent's Username -->
+		<% if @game.player2 == nil %>
+			<%= f.text_field :player2, :placeholder => "Opponent's Name" %>
+		<% else %>
+			<%= f.text_field :player2 %>
+		<% end %>
+		<!-- Current User's Score -->
+		<% if @game.p2score == nil %>
+			<%= f.text_field :p2score, :placeholder => "Opponent's Score" %>
+		<% else %>
+			<%= f.text_field :p2score %>
+		<% end %>
+		<%= hidden_field_tag("game[id]", @game.id) %>
+		<%= f.submit "Create" %>
+	<% end %>
+</div>

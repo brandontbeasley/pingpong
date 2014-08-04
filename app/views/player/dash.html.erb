@@ -1,0 +1,6 @@
+<% if @player.first_name == nil %>	
+	<a href="/player/<%= @player.id %>/edit">You Must Provide Your Information Before You Can Participate.</a>
+<% else %>
+	<h1>Rankings Go Here!</h1>
+	<a href="/game/new">Add a New Game Score</a>
+<% end %>

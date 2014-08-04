@@ -1,0 +1,31 @@
+<div class="container">
+	<%= form_for @player, url: {action: "update"} do |f| %>
+		<!-- Last Name -->
+		<% if @player.username == nil %>
+			<%= f.text_field :username, :placeholder => "Username" %>
+		<% else %>
+			<%= f.text_field :username %>
+		<% end %>
+		<%= f.text_field :email%>
+		<!-- First Name -->
+		<% if @player.first_name == nil %>
+			<%= f.text_field :first_name, :placeholder => "First Name" %>
+		<% else %>
+			<%= f.text_field :first_name %>
+		<% end %>
+		<!-- Last Name -->
+		<% if @player.last_name == nil %>
+			<%= f.text_field :last_name, :placeholder => "Last Name" %>
+		<% else %>
+			<%= f.text_field :last_name %>
+		<% end %>
+		<!-- Position -->
+		<% if @player.position == nil %>
+			<%= f.text_field :position, :placeholder => "Your Position @ BP3" %>
+		<% else %>
+			<%= f.text_field :position %>
+		<% end %>
+		
+		<%= f.submit "Submit" %>
+	<% end %>
+</div>
